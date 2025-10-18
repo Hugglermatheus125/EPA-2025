@@ -1,10 +1,10 @@
 <?php
 
 // Configuração da conexão com o BD
-$dbHost   = 'localhost';
-$dbNome   = 'teste_epav4'; // TROQUE O NOME NA VERSÃO FINAL
+$dbHost = 'localhost';
+$dbNome = 'teste_epav4'; // TROQUE O NOME NA VERSÃO FINAL
 $dbUsuario = 'root';
-$dbSenha  = ''; // mantenha vazia se o root não tiver senha
+$dbSenha = ''; // mantenha vazia se o root não tiver senha
 
 try {
     // Força o MySQL a usar autenticação compatível com PHP (mysql_native_password)
@@ -18,4 +18,8 @@ try {
 } catch (PDOException $error) {
     die("Erro na conexão: " . $error->getMessage());
 }
+
+    //SE NAO DER CERTO ESSA JOÇA ENTAO TENTA VER SE O SEU USUARIO E SENHA SAO IGUAL
+    // SE NAO DEIXA QUE NOS RESOLVE DPS
 ?>
+
