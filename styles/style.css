@@ -1,0 +1,69 @@
+  * {
+      margin: 0px;
+      padding: 0px;
+  }
+
+  :root {
+      --primary-color: #8E1800;
+      --black: #150100;
+      --white: #F0F0F0;
+  }
+
+  .roboto-regular {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: normal;
+      font-style: normal;
+      font-variation-settings:
+          "wdth" 100;
+  }
+
+  .roboto-subtitle {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: bold;
+      font-style: normal;
+      font-variation-settings:
+          "wdth" 100;
+  }
+
+  .roboto-title {
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: bolder;
+      font-style: normal;
+      font-variation-settings:
+          "wdth" 100;
+  }
+
+  .footer-bg {
+      background-color: bisque;
+      margin-bottom: auto;
+  }
+
+  .afacad-regular {
+      font-family: "Afacad", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: normal;
+      font-style: normal;
+      font-variation-settings:
+          "wdth" 100;
+  }
+
+  .afacad-subtitle {
+      font-family: "Afacad", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: bold;
+      font-style: normal;
+      font-variation-settings:
+          "wdth" 100;
+  }
+
+  .creepster-title {
+      font-family: "Creepster", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: bolder;
+      font-style: normal;
+      font-variation-settings:
+          "wdth" 100;
+  }
