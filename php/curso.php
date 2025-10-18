@@ -5,7 +5,6 @@
 
 <?php 
 include '../includes/header.php';
-include '../includes/footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -64,3 +63,7 @@ include '../includes/footer.php';
     </div>
 </body>
 </html>
+
+<?php
+include '../includes/footer.php';
+?>
