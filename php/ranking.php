@@ -1,7 +1,6 @@
 <?php 
 include '../includes/connection.php';
 include '../includes/header.php';
-include '../includes/footer.php';
 
     /*
     Buscagem de informações da tabela "infoParticipante" e de "infoRanking".
@@ -50,3 +49,7 @@ $rankingParticipantes = $stmt->fetchAll();
     </p>
     <br>
     <?php } ?>
+
+    <?php
+include '../includes/footer.php';
+?>

@@ -65,3 +65,7 @@ include '../includes/footer.php';
     header('Location: ticketDigital.php?id=' . $ultimopId);
     exit();
 ?>
+
+<?php
+include '../includes/footer.php';
+?>
