@@ -18,9 +18,7 @@ include 'connection.php';
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Creepster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <script src="javascript/header.js"></script>
-
+    <link rel="stylesheet" href="../styles/header.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg">
