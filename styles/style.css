@@ -4,10 +4,21 @@
   }
 
   :root {
-      --primary-color: #8E1800;
-      --black: #150100;
-      --white: #F0F0F0;
+      --primary-color: 142, 24, 0;
+      --black: 21, 1, 0;
+      --white: 240, 240, 240;
   }
+
+  body{
+    margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('../material/fundoParqueHorror.png'); /* 👉 coloque o link da sua imagem */
+      background-size: cover;        /* cobre toda a tela */
+      background-position: center;   /* centraliza a imagem */
+      background-repeat: no-repeat;  /* impede repetição */
+      background-attachment: fixed;  /* opcional: fixa a imagem no scroll */
+}
 
   .roboto-regular {
       font-family: "Roboto", sans-serif;
@@ -16,6 +27,8 @@
       font-style: normal;
       font-variation-settings:
           "wdth" 100;
+    color: #F0F0F0;
+    
   }
 
   .roboto-subtitle {

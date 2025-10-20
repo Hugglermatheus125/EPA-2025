@@ -5,7 +5,6 @@
 
 <?php 
 include '../includes/header.php';
-include '../includes/footer.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,12 +13,12 @@ include '../includes/footer.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="css/registro.css">
+    <link rel="stylesheet" href="../styles/registro.css">
 </head>
-<body>
-    <div class="container-fluid">
-        <div class="form-registro row col-xl-6 col-s-10 justify-content-center h-100">
-            <h1 class="roboto-title text-center">Cadastro de Usuário</h1>
+<body class="h-100">
+    <div class="container-fluid h-100 d-flex flex-column">
+        <div class="form-registro d-flex flex-grow-1 row col-xl-6 col-s-10">
+            <h1 class="roboto-title">Cadastro de Usuário</h1>
             <form action="registro.php" class="roboto-regular" method="post">
                 <label for="pNome" class="label-control">Nome:</label>
                 <input type="text" name="pNome" id="pNome" class="form-control" maxlength="50" required autocomplete="off">
@@ -34,6 +33,10 @@ include '../includes/footer.php';
     <div class="mb-3" id="exibirID"></div>
     </body>
 </html>
+
+<?php
+include '../includes/footer.php';
+?>
 
 <?php
     /* 
@@ -62,10 +65,6 @@ include '../includes/footer.php';
 
 
     // Redireciona e passa o ID via GET
-    header('Location: ticketDigital.php?id=' . $ultimopId);
+    header('Location: ticket.php?id=' . $ultimopId);
     exit();
-?>
-
-<?php
-include '../includes/footer.php';
 ?>
