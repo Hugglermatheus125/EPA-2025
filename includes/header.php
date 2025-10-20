@@ -30,10 +30,10 @@ include 'connection.php';
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a style="color: #FFFFFF;" class="nav-link active nav" aria-current="page" href="php/ranking.php">Ranking Geral</a>
+          <a style="color: #FFFFFF;" class="nav-link active nav" aria-current="page" href="ranking.php">Ranking Geral</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="galeria.php">Galeria</a>
+          <a class="nav-link" href="php/galeria.php">Galeria</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="registro.php">Registro</a>
