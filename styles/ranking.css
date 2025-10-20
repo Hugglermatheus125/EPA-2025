@@ -4,34 +4,32 @@
     --white: #F0F0F0;
 }
 
-body{
-    margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-image: url('../material/fundoParqueHorror.png'); /* 👉 coloque o link da sua imagem */
-      background-size: cover;        /* cobre toda a tela */
-      background-position: center;   /* centraliza a imagem */
-      background-repeat: no-repeat;  /* impede repetição */
-      background-attachment: fixed;  /* opcional: fixa a imagem no scroll */
-}
+
 h1{
     color: var(--white);
 }
 input{
     width: 500px;
+    border-radius: 10px;
 }
 .leaderboard-container{
     background-color: var(--black);
-    max-width: 600px;
+    max-width: 750px;
     align-items: center;
     border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    height: 500px;
 }
 .display-ranking{
     background-color: var(--primary-color);
     padding: 12px;
-    width: 550px;
+    width: 700px;
     border-radius: 15px;
     margin-top: 15px;
 
+}
+.leaderboard-container > div{
+    border: 3px solid blue;
 }
 

@@ -44,7 +44,7 @@ $posicao_atual = 0;
                 $diferencaformatada = $diferenca->format('%d %H-%i-%s');
                 
                 ?>
-            <p class="roboto-regular display-ranking">
+            <p class="roboto-regular display-ranking d-flex row">
                 
                 <?php
                         $posicao_atual++;
@@ -68,9 +68,8 @@ $posicao_atual = 0;
                         ?>
     
                     <img src="bolinha-preta">
-                    <strong><?php echo $participante['pNome']; ?></strong>
-                    <strong><?php echo $diferencaformatada; ?></strong> 
-                    Pontuação <strong><?php echo $participante['rPontuacaoFinal']; ?></strong>
+                    <div class="col-6"><?php echo $participante['pNome']; ?></div>
+                    <div class="col-6">Pontuação: <?php echo $participante['rPontuacaoFinal']; ?></div>
                 
                 
                 <!--
@@ -81,7 +80,7 @@ $posicao_atual = 0;
                                                                                     YYYY-MM-DD HH-II-SS
                                                                                     Onde que II = Minutos
                                                                                     -->
-                                                                                </p>
+            </p>
             <?php } ?>
     
         </div>
