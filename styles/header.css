@@ -53,3 +53,21 @@
 .navbar-nav .nav-item{
     margin-left:8px;
 }
+
+.nav-link.active {
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.nav-link:visited {
+    color: #FFFFFF;
+}
+
+.nav-link:active {
+    color: #FFFFFF;
+}

@@ -34,6 +34,7 @@
       font-style: normal;
       font-variation-settings:
           "wdth" 100;
+      color: white;
   }
 
   .footer-bg {
@@ -67,3 +68,14 @@
       font-variation-settings:
           "wdth" 100;
   }
+
+  body{
+    margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('../assets/fundoParqueHorror.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+}

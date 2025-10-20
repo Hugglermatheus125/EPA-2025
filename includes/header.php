@@ -19,6 +19,7 @@ include 'connection.php';
     <link rel="stylesheet" href="../styles/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/header.css">
+    <script src="../javascript/header.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg">
@@ -30,7 +31,7 @@ include 'connection.php';
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a style="color: #FFFFFF;" class="nav-link active nav" aria-current="page" href="php/ranking.php">Ranking Geral</a>
+          <a style="color: #FFFFFF;" class="nav-link active nav" aria-current="page" href="ranking.php">Ranking Geral</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="galeria.php">Galeria</a>

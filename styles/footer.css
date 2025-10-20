@@ -11,10 +11,6 @@ body {
     min-height: 100vh;
 }
 
-.fixed-bottom {
-    position: static !important;
-}
-
 .footer-bg {
     margin-top: auto;
     margin-bottom: 0;
