@@ -23,13 +23,19 @@ input{
 }
 .display-ranking{
     background-color: var(--primary-color);
-    padding: 12px;
+    padding:10px;
     width: 700px;
     border-radius: 15px;
     margin-top: 15px;
+    height: 62px;   
 
 }
-.leaderboard-container > div{
-    border: 3px solid blue;
+
+.p1{
+    margin-left: -14px;
 }
+.p2{
+    text-align: end;
+}
+
 

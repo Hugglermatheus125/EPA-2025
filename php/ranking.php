@@ -44,21 +44,25 @@ $posicao_atual = 0;
                 $diferencaformatada = $diferenca->format('%d %H-%i-%s');
                 
                 ?>
-            <p class="roboto-regular display-ranking d-flex row">
+            <div class="roboto-regular display-ranking d-flex row align-items-center justify-content-between">
                 
-                <?php
+                
+    
+                    
+                    <p class="col-6 p1">
+                        <?php
                         $posicao_atual++;
                         if($posicao_atual == 1){
-                            echo '<img src="ouro">';
+                            echo '<img src="../assets/primeiro-lugar.png" class=" img-fluid">';
                             
                         }
                         
                         if($posicao_atual == 2){
-                            echo '<img src="prata">';
+                            echo '<img src="../assets/segundo-lugar.png" class=" img-fluid ">';
                         }
                         
                         if($posicao_atual == 3){
-                            echo '<img src="bronze">';
+                            echo '<img src="../assets/terceiro-lugar.png" class=" img-fluid">';
                         }
                         if ($posicao_atual >= 4) {
                             echo $posicao_atual;
@@ -66,10 +70,11 @@ $posicao_atual = 0;
                             
                         }
                         ?>
-    
-                    <img src="bolinha-preta">
-                    <div class="col-6"><?php echo $participante['pNome']; ?></div>
-                    <div class="col-6">Pontuação: <?php echo $participante['rPontuacaoFinal']; ?></div>
+                        <img src="../assets/Ellipse-1.png" class="img-fluid"> <?php echo  $participante['pNome']; ?>
+                    </p>
+                    <p class="col-5 p2">
+                         <?php echo $participante['rPontuacaoFinal']; ?>
+                    </p>
                 
                 
                 <!--
@@ -80,7 +85,7 @@ $posicao_atual = 0;
                                                                                     YYYY-MM-DD HH-II-SS
                                                                                     Onde que II = Minutos
                                                                                     -->
-            </p>
+                                                                            </div>
             <?php } ?>
     
         </div>
