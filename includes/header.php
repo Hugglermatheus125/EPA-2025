@@ -24,7 +24,7 @@ include 'connection.php';
 <body>
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <p class="navbar-brand">Home</p>
+    <p class="navbar-brand"></p>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +34,7 @@ include 'connection.php';
           <a style="color: #FFFFFF;" class="nav-link active nav" aria-current="page" href="ranking.php">Ranking Geral</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="php/galeria.php">Galeria</a>
+          <a class="nav-link" href="galeria.php">Galeria</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="registro.php">Registro</a>

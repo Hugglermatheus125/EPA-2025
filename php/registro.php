@@ -15,15 +15,14 @@ include '../includes/header.php';
     <title>Registro</title>
     <link rel="stylesheet" href="../styles/registro.css">
 </head>
-<body class="h-100">
-    <div class="container-fluid h-100 d-flex flex-column">
-        <div class="form-registro d-flex flex-grow-1 row col-xl-6 col-s-10">
-            <h1 class="roboto-title">Cadastro de Usuário</h1>
-            <form action="registro.php" class="roboto-regular" method="post">
+    <div class="container-fluid d-flex flex-grow-1">
+        <div class="form-registro d-flex row col-xl-6 col-s-10 align-items-center justify-content-center">
+            <h1 class="creepster-title">Cadastro de Usuário</h1>
+            <form action="registro.php" class="afacad-regular" method="post">
                 <label for="pNome" class="label-control">Nome:</label>
                 <input type="text" name="pNome" id="pNome" class="form-control" maxlength="50" required autocomplete="off">
                 <br>
-                <input type="submit" value="Cadastrar" class="btn btn-primary" onclick="limpar()">
+                <button class="btn afacad-regular" onclick="limpar()"><p>Cadastrar</p><button>
             </form>
         </div>
         
@@ -31,8 +30,7 @@ include '../includes/header.php';
         
     </div>
     <div class="mb-3" id="exibirID"></div>
-    </body>
-</html>
+    <!-- </body> -->
 
 <?php
 include '../includes/footer.php';
