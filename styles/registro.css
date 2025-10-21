@@ -1,9 +1,11 @@
 .form-registro{
     background-color: rgba(var(--black), 0.72) !important;
-    opacity: 0.72 !important;
 }
-.form-registro h1.roboto-title {
-    line-height: 1.1;
-    margin: 10px 0 20px;
-    text-align: center;
+.form-control{
+    width: 474px;
+    height: 29px;
 }
+.btn{
+    background-color: rgba(var(--primary-color), 1);
+}
+.btn
