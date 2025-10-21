@@ -22,7 +22,7 @@ include '../includes/header.php';
                 <label for="pNome" class="label-control">Nome:</label>
                 <input type="text" name="pNome" id="pNome" class="form-control" maxlength="50" required autocomplete="off">
                 <br>
-                <input type="submit" value="Cadastrar" class="btn" onclick="limpar()">
+                <button class="btn afacad-regular" onclick="limpar()"><p>Cadastrar</p><button>
             </form>
         </div>
         

@@ -4,8 +4,19 @@
 .form-control{
     width: 474px;
     height: 29px;
+    border-radius: 10px;
+}
+.form-control:active{
+    border: none;
 }
 .btn{
     background-color: rgba(var(--primary-color), 1);
+    border-radius: 10px;
+    width: 184px;
+    height: 29px;
 }
-.btn
+.btn:hover{
+    background-color: rgba(var(--primary-color), 1);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
