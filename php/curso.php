@@ -4,6 +4,7 @@
 -->
 
 <?php 
+// include '../includes/footer.php';
 include '../includes/header.php';
 ?>
 
@@ -13,13 +14,13 @@ include '../includes/header.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPA</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/curso.css">
 </head>
 <body>
     <div class="mb-3">
         <div class="row">
-            <h1 class="roboto-subtitle">
-                Sobre Desenvolvimento de Sistema
+            <h1 class="subtitle">
+                Sobre o Curso
             </h1>
         </div>
         <div class="row">
@@ -58,12 +59,12 @@ include '../includes/header.php';
                     <li>Luciano Souza</li>
                     <li>Lucas Miranda</li>
                 </ul>
+                <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
             </p>
         </div>
     </div>
+    <?php
+    include '../includes/footer.php';
+    ?>
 </body>
 </html>
-
-<?php
-include '../includes/footer.php';
-?>
