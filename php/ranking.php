@@ -70,7 +70,7 @@ $posicao_atual = 0;
                             
                         }
                         ?>
-                        <img src="../assets/Ellipse-1.png" class="img-fluid"> <?php echo  $participante['pNome']; ?>
+                        <img src="../assets/Ellipse-1.png" class="img-fluid img-boll"> <?php echo  $participante['pNome']; ?>
                     </p>
                     <p class="col-5 p2">
                          <?php echo $participante['rPontuacaoFinal']; ?>
