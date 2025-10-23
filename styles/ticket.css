@@ -1,0 +1,38 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.father {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Ajustado para evitar conflitos com footer fixo no fim */
+}
+
+.ticket-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.ticket-bg {
+    width: 100%;
+    display: block;
+}
+
+.id-area {
+    position: absolute;
+    bottom: 18%;
+    left: 13%;
+    transform: translateY(50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: #fce6bd;
+}
+
+footer {
+    margin-top: auto !important;
+}
