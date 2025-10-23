@@ -8,13 +8,23 @@ include '../includes/header.php';
 
 
 //Paginação
-$limite = 30; // máximo por página
+$limite = 5; // máximo por página
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
 if ($pagina < 1) $pagina = 1;
 $inicio = ($pagina - 1) * $limite;
 
 $total = $pdo->query("SELECT COUNT(*) FROM inforanking")->fetchColumn();
 $total_paginas = ceil($total / $limite);
+
+$sql = "
+    SELECT p.pNome, r.rPontuacaoFinal
+    FROM infoparticipante p
+    LEFT JOIN inforanking r ON r.rIdParticipante = p.pId
+    ORDER BY r.rPontuacaoFinal DESC
+    LIMIT $limite OFFSET $inicio
+";  
+$result = $pdo->query($sql);
 
 $posicao_atual = 0;
 ?>
@@ -34,7 +44,7 @@ $posicao_atual = 0;
 
         <form action="ranking.php" method="post">
             <input type="number" name="uId" id="uId" required autocomplete="off" placeholder="Insira seu ID" class="input-search"/>
-            <button type="submit" class="btn btn-primary mt-3">Pesquisar</button>
+            <button type="submit" class="btn-form mt-3">Pesquisar</button>
         </form>
         <?php
             if (isset($_POST['uId']) && !empty($_POST['uId'])) {

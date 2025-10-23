@@ -2,7 +2,7 @@
 
 // Configuração da conexão com o BD
 $dbHost = 'localhost';
-$dbNome = 'teste_epav4';  // TROQUE O NOME NA VERSÃO FINAL
+$dbNome = 'teste_epav5';  // TROQUE O NOME NA VERSÃO FINAL
 $dbUsario = 'root';
 $dbSenha = '';
 
