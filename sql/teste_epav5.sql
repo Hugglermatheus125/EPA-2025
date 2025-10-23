@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2025 at 06:27 PM
+-- Generation Time: Oct 21, 2025 at 08:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,10 +18,22 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `teste_epav4`
+-- Database: `teste_epav5`
 --
-CREATE DATABASE IF NOT EXISTS `teste_epav4` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `teste_epav4`;
+CREATE DATABASE IF NOT EXISTS `teste_epav5` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `teste_epav5`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `infogaleria`
+--
+
+CREATE TABLE `infogaleria` (
+  `gId` int(11) NOT NULL,
+  `pIdXgId` int(11) NOT NULL,
+  `gArquivo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -53,8 +65,11 @@ CREATE TABLE `inforanking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Indexes for table `infogaleria`
 --
+ALTER TABLE `infogaleria`
+  ADD PRIMARY KEY (`gId`),
+  ADD KEY `pIdxgId` (`pIdXgId`);
 
 --
 -- Indexes for table `infoparticipante`
@@ -74,20 +89,32 @@ ALTER TABLE `inforanking`
 --
 
 --
+-- AUTO_INCREMENT for table `infogaleria`
+--
+ALTER TABLE `infogaleria`
+  MODIFY `gId` int(11) NOT NULL AUTO_INCREMENT=0;
+
+--
 -- AUTO_INCREMENT for table `infoparticipante`
 --
 ALTER TABLE `infoparticipante`
-  MODIFY `pId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT for table `inforanking`
 --
 ALTER TABLE `inforanking`
-  MODIFY `rId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `rId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `infogaleria`
+--
+ALTER TABLE `infogaleria`
+  ADD CONSTRAINT `pIdxgId` FOREIGN KEY (`pIdXgId`) REFERENCES `infoparticipante` (`pId`);
 
 --
 -- Constraints for table `inforanking`

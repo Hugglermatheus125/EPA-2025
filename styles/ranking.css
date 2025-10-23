@@ -3,6 +3,10 @@
     --black: #150100;
     --white: #F0F0F0;
 }
+.father{
+    height: 100%;
+    margin-top: 45px;
+}
 
 
 h1{
@@ -13,13 +17,13 @@ input{
     border-radius: 10px;
 }
 .leaderboard-container{
+    position: relative;
     background-color: var(--black);
     max-width: 750px;
     align-items: center;
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
-    height: 500px;
+    height: 550px;
 }
 .display-ranking{
     background-color: var(--primary-color);
@@ -39,6 +43,15 @@ input{
 }
 .img-boll{
     margin-right: 12px;
+}
+.paginas{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
 }
 
 
