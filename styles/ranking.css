@@ -18,7 +18,7 @@ input{
     border: none;
     height: 30px;
     padding: 10px;
-    box-shadow: 0px 0px 8px var(--black);
+    box-shadow: 0px 0px 10px var(--black);
 }
 input:active{
     border: var(--black);
@@ -30,10 +30,14 @@ input:active{
     color: var(--white);
     border-radius: 10px;
     padding: 8px;
-    transition: ease 0.2s;
+    transition: ease 0.4s;
+    box-shadow: 0px 0px 5px var(--black);
 }
 .btn-form:hover{
     transform: scale(1.2);
+}
+.btn-form:active{
+    transform: scale(0.5);
 }
 .leaderboard-container{
     position: relative;
@@ -42,7 +46,7 @@ input:active{
     align-items: center;
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.5);
-    height: 700px;
+    height: 90%;
     overflow: hidden;
 }
 .display-ranking{
@@ -57,12 +61,32 @@ input:active{
 
 .p1{
     margin-left: -14px;
+    color: var(--white);
 }
 .p2{
     text-align: end;
+    color: white;
+}
+.p3{
+    color: var(--white);
+
+}
+.afacad-regular-ranking {
+    font-family: "Afacad", sans-serif;
+    font-size: 25px;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+        color: var(--white)
 }
 .img-boll{
     margin-right: 12px;
+}
+.img-boll-2{
+    margin-left: 17px;
+    margin-right: 11px;
 }
 .paginas{
     display: flex;
@@ -83,6 +107,13 @@ input:active{
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    transition: ease 0.2s;
+}
+.page-btn:hover{
+    transform: scale(1.2);
+}
+.page-btn:active{
+    transform: scale(0.5);
 }
 
 /* Animação sutil de aparição */

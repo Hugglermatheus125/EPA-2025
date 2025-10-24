@@ -115,7 +115,7 @@ $posicao_atual = 0;
                 $posicao = $inicio;
                 ?>
                 <br>
-                <div class="roboto-regular container-fluid d-flex flex-column leaderboard-container">
+                <div class="container-fluid d-flex flex-column leaderboard-container">
                 
                 <?php
                 foreach ($rankingParticipantes as $participante) {
@@ -126,35 +126,54 @@ $posicao_atual = 0;
 
                     ?>
 
-                    <div class="roboto-regular display-ranking d-flex row align-items-center justify-content-between">
+                    <div class="display-ranking d-flex row align-items-center justify-content-between">
 
-                    <p class="col-6 p1 afacad-regular">
+                    
                         <?php
                         $posicao++;
                         if($posicao == 1){
-                            echo '<img src="../assets/primeiro-lugar.png" class=" img-fluid">';
-                            
-                        }
+                             
+                            ?>
+                            <p class="col-6 p1 afacad-regular-ranking">
+                                <img src="../assets/primeiro-lugar.png" class=" img-fluid">
+                                <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular-ranking" > <?php echo $participante['pNome']; ?>
+                            </p>    
+                      <?php  }
                         
                         if($posicao == 2){
-                            echo '<img src="../assets/segundo-lugar.png" class=" img-fluid ">';
-                        }
-                        
-                        if($posicao == 3){
-                            echo '<img src="../assets/terceiro-lugar.png" class=" img-fluid">';
-                        }
-                        if ($posicao >= 4) {
-                            echo $posicao;
-                            
-                            
-                        }
+
                         ?>
-                        <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular"> <?php echo $participante['pNome']; ?>
-                    </p>
-                    <p class="col-5 p2 afacad-regular">
+                        <p class="col-6 p1 afacad-regular-ranking">
+                            <img src="../assets/segundo-lugar.png" class=" img-fluid">
+                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular-ranking" > <?php echo $participante['pNome']; ?>
+                        </p>
+                            
+                <?php   } 
+                        if($posicao == 3){ 
+
+                        ?>
+                        <p class="col-6 p1 afacad-regular-ranking">
+                            <img src="../assets/terceiro-lugar.png" class=" img-fluid">
+                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular" > <?php echo $participante['pNome']; ?>
+                        </p>
+                            
+                <?php   } 
+                     
+                    
+                    
+                        if ($posicao >= 4) {
+                            ?>
+
+                                <p class="p3 col-6 afacad-regular-ranking">
+                                    <?php echo $posicao; ?>
+                                    <img src="../assets/Ellipse-1.png" class="img-fluid img-boll-2 afacad-regular" > <?php echo $participante['pNome']; ?>
+                                </p>
+                     <?php }; ?>
+                            
+                    <p class="col-5 p2 afacad-regular-ranking">
                          <?php echo $participante['rPontuacaoFinal']; ?>
                     </p>
-                                                                            </div>
+                    </div>
                         
                 <?php } ?> 
                 <div class="page">
