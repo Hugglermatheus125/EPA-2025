@@ -1,5 +1,9 @@
+<!--
+                    Galeria de fotos
+    Se refere as fotos dos participantes geradas por AI
+    Será inserido aqui automaticamente a partir do GITHUB
+-->
 <?php 
-include '../includes/connection.php';
 include '../includes/header.php';
 ?>
 
@@ -13,7 +17,6 @@ include '../includes/header.php';
     <title>Galeria</title>
 </head>
 <body>
-<<<<<<< HEAD
     <div class="container-fluid flex-grow-1 ">
         <div class="mb-3">
             <div class="row"><h1 class="text-center creepster-title">Galeria de fotos</h1></div>
@@ -21,47 +24,14 @@ include '../includes/header.php';
                 
          <div class="galeriaFotos col-12 col-sm-10 col-md-8 col-lg-6"></div>
            
-=======
-    <div class="container-fluid flex-grow-1 py-5">
-        <div class="row mb-3 justify-content-center">
-            <div class="col-12">
-                <h1 class="creepster-title text-center text-white">Galeria de fotos</h1>
-            </div>
->>>>>>> 00b74030c26071cd3900615e4a193cb8d8d7e148
         </div>
-
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-                <div class="galeriaFotos">
-
-                    <!-- As fotos serão inseridas automaticamente via GitHub -->
-                     
-                </div>
-            </div>
+         
         </div>
     </div>
+    
 </body>
 </html>
 
 <?php
 include '../includes/footer.php';
-// Crie um input para reaizar a busca.
-if (isset($_POST['Id']) && !empty($_POST['Id'])){
-    // Busca por ID.
-    $stmtBusca = $pdo->prepare('SELECT gArquivo FROM infogaleria INNER JOIN infoparticipante ON infoparticipante.pId = infogaleria.pIdXgId WHERE pIdXgId = :buscarId');
-    $stmtBusca->bindParam(":buscarId", $buscarId);
-    $stmtBusca->fetchAll();
-    $stmtBusca->execute();
-    $galeriaBusca = $stmtBusca;
-    echo $galeriaBusca;
-}
-else {
-    // Busca completa.
-    $stmtBuscaCompleta = $pdo->query('SELECT gArquivo FROM infogaleria INNER JOIN infoparticipante ON infoparticipante.pId = infogaleria.pIdXgId');
-    $stmtBuscaCompleta->fetchAll();
-    $stmtBuscaCompleta->execute();
-    $galeriaCompleta = $stmtBuscaCompleta;
-        echo $galeriaCompleta;
-}
-
 ?>
