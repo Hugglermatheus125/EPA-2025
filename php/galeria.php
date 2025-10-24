@@ -13,13 +13,22 @@ include '../includes/header.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/galeria.css">
     <title>Galeria</title>
 </head>
 <body>
-    <div class="mb-3">
-        <div class="row"><h1 class="roboto-title text-center">Galeria de fotos</h1></div>
-        <div class="galeriaFotos"></div>
+    <div class="container-fluid flex-grow-1">
+        <div class="mb-3">
+            <div class="row"><h1 class="text-center creepster-title" style="color: var(--white);">Galeria de fotos</h1></div>
+            <div class="mcontainer">
+                
+         <div class="galeriaFotos"></div>
+           
+        </div>
+         
+        </div>
     </div>
+    
 </body>
 </html>
 

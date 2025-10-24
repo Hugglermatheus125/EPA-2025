@@ -38,7 +38,8 @@ $posicao_atual = 0;
         <link rel="stylesheet" href="../styles/ranking.css">
     </head>
     <body>
-    <div class="father d-flex flex-column align-items-center">
+        <div class="container-fluid flex-grow-1 " >
+    <div class="father d-flex flex-column align-items-center ">
         
         <h1 class="text-center creepster-title" style="color: var(--white);">Ranking Geral</h1>
 
@@ -180,6 +181,7 @@ $posicao_atual = 0;
                 </div>
         <?php }; ?>
         </div>
+    </div>
     </div>
 </body>
 </html>

@@ -15,21 +15,28 @@ include '../includes/header.php';
     <title>Registro</title>
     <link rel="stylesheet" href="../styles/registro.css">
 </head>
-    <div class="container-fluid d-flex flex-grow-1">
-        <div class="form-registro d-flex row col-xl-6 col-s-10 align-items-center justify-content-center">
-            <h1 class="creepster-title">Cadastro de Usuário</h1>
-            <form action="registro.php" class="afacad-regular" method="post">
+    <div class="container flex-grow-1">
+
+    <div class="mcontainer">
+
+    <div class="form-registro d-flex col-12 col-sm-10 col-md-8 col-lg-6">
+        <h1 class="creepster-title d-flex col-12 col-sm-10 col-md-8 col-lg-6">Cadastro de Usuário</h1>
+
+        <form action="registro.php" class="afacad-regular" method="post">
+            <div class="inpu">
                 <label for="pNome" class="label-control">Nome:</label>
                 <input type="text" name="pNome" id="pNome" class="form-control" maxlength="50" required autocomplete="off">
-                <br>
-                <button class="btn afacad-regular" onclick="limpar()"><p>Cadastrar</p><button>
+                </div><br>
+                <button class="btn afacad-regular" onclick="limpar()"><p>Cadastrar</p>
             </form>
+            
+            
+            
+            <!-- Formulário de registro -->
         </div>
-        
-        <!-- Formulário de registro -->
-        
     </div>
-    <div class="mb-3" id="exibirID"></div>
+    </div>
+    </div>
     <!-- </body> -->
 
 <?php

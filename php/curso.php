@@ -48,8 +48,11 @@ include '../includes/header.php';
         </div>
         <div class="row">
             <p class="roboo-regular">
+
+            <div class="listas">
+                <div class="lista1">
                 <ul>
-                    <li>Sergio Otavio Th. Ferraz (@sergiootavioth)</li>
+                    <li>Sergio Otavio Th. Ferraz</li>
                     <li>Anthony Lebrão Silva</li>
                     <li>Pedro Miguel Gallé</li>
                     <li>Cauã Nanis Rosa</li>
@@ -59,6 +62,22 @@ include '../includes/header.php';
                     <li>Luciano Souza</li>
                     <li>Lucas Miranda</li>
                 </ul>
+            </div>
+
+            <div class="lista2">
+                <ul>
+    <li><a href="https://www.instagram.com/sergiootavioth" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v4/ye/r/h2ZEGNfz-SG.png" width="10px" alt=""> (@sergiootavioth)</a></li>
+    <li><a href="https://www.instagram.com/lebrao.sl" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v4/ye/r/h2ZEGNfz-SG.png" width="10px" alt=""> (@lebrao.sl)</a></li>
+    <li><a href="https://www.instagram.com/pedro_galle_" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v4/ye/r/h2ZEGNfz-SG.png" width="10px" alt=""> (@pedro_galle_)</a></li>
+    <li><a href="https://www.instagram.com/caua_nanis" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v4/ye/r/h2ZEGNfz-SG.png" width="10px" alt=""> (@caua_nanis)</a></li>
+    <li><a href="https://www.instagram.com/victor_moura_015" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v4/ye/r/h2ZEGNfz-SG.png" width="10px" alt=""> (@victor_moura_015)</a></li>
+    <li><a href="https://www.instagram.com/neves._r1ck" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v4/ye/r/h2ZEGNfz-SG.png" width="10px" alt=""> (@neves._r1ck)</a></li>
+    <li><a href="https://www.instagram.com/hugglermatheus125" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v4/ye/r/h2ZEGNfz-SG.png" width="10px" alt=""> (@hugglermatheus125)</a></li>
+    <li><a href="https://www.instagram.com/luccii_souza" target="_blank"><img src="https://static.xx.fbcdn.net/rsrc.php/v4/ye/r/h2ZEGNfz-SG.png" width="10px" alt=""> (@luccii_souza)</a></li>
+</ul>
+
+            </div>
+            </div>
                 <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
             </p>
         </div>

@@ -1,15 +1,43 @@
+.container {
+    width: 100%;
+}
+
+.mcontainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+
 .form-registro{
     background-color: rgba(var(--black), 0.72) !important;
-    width: 50%;
-    height: 105%;
+    backdrop-filter: blur(2px);
     display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
+    
+
+    padding: 60px 20px;
+    border-radius: 12px;
+    width: 60%;
+    height: 80%;
+    
+}
+
+.afacad-regular {
+    width: 80%;
+}
+
+.inpu {
+    display: inline;
+    margin-left: 14%;
 }
 
 .form-control{
-    width: 474px;
+    width: 75%;
     height: 40px;
     border-radius: 12px;
     display: block;
@@ -20,9 +48,9 @@
     border: none;
 }
 
-.label-control{
-    margin-left: 250px;
+.label-control {
     font-size: 22px;
+    justify-content: center;
 }
 
 .btn {
@@ -31,7 +59,7 @@
     align-items: center;
     background-color: rgba(var(--primary-color), 1);
     border-radius: 12px;
-    width: 184px;
+    width: 35%;
     height: 40px;
     margin: 10px auto;
 }
@@ -48,7 +76,18 @@
 }
 .creepster-title{
     text-align: center;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     font-size: 60px;
 }
+
+/* Animação sutil de aparição */
+.mcontainer {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 

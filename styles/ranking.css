@@ -85,4 +85,14 @@ input:active{
     font-weight: bold;
 }
 
+/* Animação sutil de aparição */
+.father {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
