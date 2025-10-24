@@ -1,8 +1,3 @@
-<!--
-                    Galeria de fotos
-    Se refere as fotos dos participantes geradas por AI
-    Será inserido aqui automaticamente a partir do GITHUB
--->
 <?php 
 include '../includes/header.php';
 ?>
@@ -17,6 +12,7 @@ include '../includes/header.php';
     <title>Galeria</title>
 </head>
 <body>
+<<<<<<< HEAD
     <div class="container-fluid flex-grow-1 ">
         <div class="mb-3">
             <div class="row"><h1 class="text-center creepster-title">Galeria de fotos</h1></div>
@@ -24,11 +20,25 @@ include '../includes/header.php';
                 
          <div class="galeriaFotos col-12 col-sm-10 col-md-8 col-lg-6"></div>
            
+=======
+    <div class="container-fluid flex-grow-1 py-5">
+        <div class="row mb-3 justify-content-center">
+            <div class="col-12">
+                <h1 class="creepster-title text-center text-white">Galeria de fotos</h1>
+            </div>
+>>>>>>> 00b74030c26071cd3900615e4a193cb8d8d7e148
         </div>
-         
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="galeriaFotos">
+
+                    <!-- As fotos serão inseridas automaticamente via GitHub -->
+                     
+                </div>
+            </div>
         </div>
     </div>
-    
 </body>
 </html>
 
