@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 21, 2025 at 08:43 PM
+-- Generation Time: Oct 24, 2025 at 01:57 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `teste_epav5`
+-- Database: `teste_epav7`
 --
-CREATE DATABASE IF NOT EXISTS `teste_epav5` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `teste_epav5`;
+CREATE DATABASE IF NOT EXISTS `teste_epav7` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `teste_epav7`;
 
 -- --------------------------------------------------------
 
@@ -85,14 +85,10 @@ ALTER TABLE `inforanking`
   ADD KEY `fk_infoparticipanteXinforanking` (`rIdParticipante`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
 -- AUTO_INCREMENT for table `infogaleria`
 --
 ALTER TABLE `infogaleria`
-  MODIFY `gId` int(11) NOT NULL AUTO_INCREMENT=0;
+  MODIFY `gId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `infoparticipante`
@@ -105,22 +101,6 @@ ALTER TABLE `infoparticipante`
 --
 ALTER TABLE `inforanking`
   MODIFY `rId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `infogaleria`
---
-ALTER TABLE `infogaleria`
-  ADD CONSTRAINT `pIdxgId` FOREIGN KEY (`pIdXgId`) REFERENCES `infoparticipante` (`pId`);
-
---
--- Constraints for table `inforanking`
---
-ALTER TABLE `inforanking`
-  ADD CONSTRAINT `fk_infoparticipanteXinforanking` FOREIGN KEY (`rIdParticipante`) REFERENCES `infoparticipante` (`pId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

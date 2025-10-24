@@ -21,25 +21,25 @@ include '../includes/header.php';
 </div>
 
 <script>
-    const idWindowSearch = new URLSearchParams(window.location.search).get("id");
-    let output = document.querySelector("#exibirId");
+        // Explicação de "URLSearchParams(window.location.search).get("id").
+        // Numa URL é comum ver o seguinte: "link?VARIAVEL=VALOR".
+        // O "window.location.search" retorna QUALQUER valor após o "?".
+        // O "new URLSearchParams" cria um mini-objeto contedo as informações após o "?".
+        // O "get" selecione em especifico o valor a ser selecionado, nesse caso o ID.
+        const idWindowSearch = new URLSearchParams(window.location.search).get("id");
+        let output = document.querySelector("#exibirId")
+        if (idWindowSearch !== null) {
+            localStorage.setItem("idUsuario", idWindowSearch);
+        }
+        idSalvo = localStorage.getItem("idUsuario");
+            if (idSalvo) {
+                output.innerHTML = `<p class="roboto-regular"> Seu ID é: ${idSalvo} </p>`
+            }
+            else {
+                output.innerHTML = `<p> Você não possui um Ticket. <a href="registro.php">Cadastre-se</a>`
+            }
 
-    if (idWindowSearch !== null) {
-        localStorage.setItem("idUsuario", idWindowSearch);
-    }
-
-    const idSalvo = localStorage.getItem("idUsuario");
-
-    if (idSalvo) {
-        output.textContent = `ID: ${idSalvo}`;
-    } else {
-        output.innerHTML = `<p class="roboto-regular">Você não possui um Ticket. <a href="registro.php">Cadastre-se</a></p>`;
-        output.style.position = "static";
-        output.style.textAlign = "center";
-        output.style.color = "#fff";
-        output.style.paddingTop = "20px";
-    }
-</script>
+    </script>
 
 <?php 
 // Footer agora está no lugar certo
