@@ -17,12 +17,12 @@ include '../includes/header.php';
     <title>Galeria</title>
 </head>
 <body>
-    <div class="container-fluid flex-grow-1">
+    <div class="container-fluid flex-grow-1 ">
         <div class="mb-3">
-            <div class="row"><h1 class="text-center creepster-title" style="color: var(--white);">Galeria de fotos</h1></div>
+            <div class="row"><h1 class="text-center creepster-title">Galeria de fotos</h1></div>
             <div class="mcontainer">
                 
-         <div class="galeriaFotos"></div>
+         <div class="galeriaFotos col-12 col-sm-10 col-md-8 col-lg-6"></div>
            
         </div>
          

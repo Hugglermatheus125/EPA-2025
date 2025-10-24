@@ -18,7 +18,7 @@
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
     --bs-black: #000;
-    --bs-white: #fff;
+    --bs-white: #ffffff;
     --bs-gray: #6c757d;
     --bs-gray-dark: #343a40;
     --bs-gray-100: #f8f9fa;
@@ -123,7 +123,7 @@
     --bs-form-valid-color: #198754;
     --bs-form-valid-border-color: #198754;
     --bs-form-invalid-color: #dc3545;
-    --bs-form-invalid-border-color: #dc3545
+    --bs-form-invalid-border-color: #dc3545;
 }
 
 [data-bs-theme=dark] {

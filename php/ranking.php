@@ -69,7 +69,7 @@ $posicao_atual = 0;
                     $diferencaformatada = $diferenca->format('%d %H-%i-%s');
                     ?>
                 <br>
-                <div class=" roboto-regular container-fluid d-flex flex-column leaderboard-container">
+                <div class="dform roboto-regular container-fluid d-flex flex-column leaderboard-container d-flex col-12 col-sm-10 col-md-8 col-lg-6">
                     <div class="roboto-regular display-ranking d-flex row align-items-center justify-content-between">
                         <p class="col-6 p1">
                             <?php
