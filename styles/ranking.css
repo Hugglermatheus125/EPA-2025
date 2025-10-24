@@ -16,7 +16,7 @@ input{
     width: 500px;
     border-radius: 10px;
     border: none;
-    height: 25px;
+    height: 30px;
     padding: 10px;
     box-shadow: 0px 0px 8px var(--black);
 }
@@ -42,7 +42,7 @@ input:active{
     align-items: center;
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.5);
-    height: 550px;
+    height: 700px;
     overflow: hidden;
 }
 .display-ranking{

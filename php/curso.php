@@ -24,7 +24,7 @@ include '../includes/header.php';
             </h1>
         </div>
         <div class="row">
-            <p class="roboto-regular">
+            <p class="afacad-regular">
                 Curso de Desenvolvimento de Sistemas – ETEC Sales Gomes (Tatuí – SP) <br>
 
             O curso de Desenvolvimento de Sistemas integrado ao Ensino Médio da ETEC Sales Gomes é uma <br>

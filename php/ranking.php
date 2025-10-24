@@ -8,23 +8,15 @@ include '../includes/header.php';
 
 
 //Paginação
-$limite = 5; // máximo por página
+$limite = 8; // máximo por página
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
 if ($pagina < 1) $pagina = 1;
 $inicio = ($pagina - 1) * $limite;
 
+// Total de registros
 $total = $pdo->query("SELECT COUNT(*) FROM inforanking")->fetchColumn();
 $total_paginas = ceil($total / $limite);
 
-$sql = "
-    SELECT p.pNome, r.rPontuacaoFinal
-    FROM infoparticipante p
-    LEFT JOIN inforanking r ON r.rIdParticipante = p.pId
-    ORDER BY r.rPontuacaoFinal DESC
-    LIMIT $limite OFFSET $inicio
-";  
-$result = $pdo->query($sql);
 
 $posicao_atual = 0;
 ?>
@@ -43,7 +35,7 @@ $posicao_atual = 0;
         
         <h1 class="text-center creepster-title" style="color: var(--white);">Ranking Geral</h1>
 
-        <form action="ranking.php" method="post">
+        <form action="ranking.php" method="post" class="afacad-regular">
             <input type="number" name="uId" id="uId" required autocomplete="off" placeholder="Insira seu ID" class="input-search"/>
             <button type="submit" class="btn-form mt-3">Pesquisar</button>
         </form>
@@ -118,9 +110,9 @@ $posicao_atual = 0;
                     Se não houver um ID buscado
                     Exibir o ranking normalmente.
                 */
-                $stmtRankgeral = $pdo->query('SELECT * FROM infoparticipante INNER JOIN inforanking ON infoparticipante.pId = inforanking.rIdParticipante ORDER BY rPontuacaoFinal DESC, TIMESTAMPDIFF(SECOND, rTempoInicial, rTempoFinal) ASC');
+                $stmtRankgeral = $pdo->query("SELECT * FROM infoparticipante INNER JOIN inforanking ON infoparticipante.pId = inforanking.rIdParticipante ORDER BY rPontuacaoFinal DESC, TIMESTAMPDIFF(SECOND, rTempoInicial, rTempoFinal) ASC LIMIT $limite OFFSET $inicio");
                 $rankingParticipantes = $stmtRankgeral->fetchAll();
-                $posicao = 0;
+                $posicao = $inicio;
                 ?>
                 <br>
                 <div class="roboto-regular container-fluid d-flex flex-column leaderboard-container">
@@ -136,7 +128,7 @@ $posicao_atual = 0;
 
                     <div class="roboto-regular display-ranking d-flex row align-items-center justify-content-between">
 
-                    <p class="col-6 p1">
+                    <p class="col-6 p1 afacad-regular">
                         <?php
                         $posicao++;
                         if($posicao == 1){
@@ -157,21 +149,21 @@ $posicao_atual = 0;
                             
                         }
                         ?>
-                        <img src="../assets/Ellipse-1.png" class="img-fluid img-boll"> <?php echo $participante['pNome']; ?>
+                        <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular"> <?php echo $participante['pNome']; ?>
                     </p>
-                    <p class="col-5 p2">
+                    <p class="col-5 p2 afacad-regular">
                          <?php echo $participante['rPontuacaoFinal']; ?>
                     </p>
                                                                             </div>
                         
                 <?php } ?> 
-                <div class="paginas">
+                <div class="page">
+                    <div class="paginas">
                     <?php for ($i = 1; $i <= min(3, $total_paginas); $i++): ?>
                         <a href="?page=<?= $i ?>">
-                            <div class="page-btn <?= ($i == $pagina) ? 'active' : '' ?>"><?= $i ?></div>
+                            <div class="page-btn afacad-regular <?= ($i == $pagina) ? 'active' : '' ?>"><?= $i ?></div>
                         </a>
                     <?php endfor; ?>
-
 
                     <?php if ($pagina < $total_paginas): ?>
                         <a href="?page=<?= $pagina + 1 ?>">
