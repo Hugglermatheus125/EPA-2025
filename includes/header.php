@@ -34,10 +34,10 @@ include 'connection.php';
           <a style="color: #FFFFFF;" class="nav-link active nav" aria-current="page" href="ranking.php">Ranking Geral</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="galeria.php">Galeria</a>
+          <a class="nav-link" href="../php/galeria.php">Galeria</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="registro.php">Registro</a>
+          <a class="nav-link" href="../php/registro.php">Registro</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="curso.php">Sobre o Curso</a>
