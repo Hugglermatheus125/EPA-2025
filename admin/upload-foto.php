@@ -12,16 +12,16 @@ include '../includes/header.php';
     <title>Upload de Foto</title>
 </head>
 <body>
-    <form action="upload-foto.php" method="post" enctype="multipart/form-data">
-        <label for="user-id">ID do Usuário:</label>
-        <input type="number" name="user-id" id="user-id" required>
+    <form action="upload-foto.php" method="post" enctype="multipart/form-data" class="afacad-regular text-center">
+        <label for="user-id" class="form-label">ID do Usuário:</label>
+        <input type="number" name="user-id" id="user-id" required class=" form-control">
         <br><br>
 
-        <label for="foto-participante">Escolher arquivo</label>
-        <input type="file" name="foto-participante" id="foto-participante" accept="image/*" required>
+        <label for="foto-participante" class=" form-label">Escolher arquivo</label>
+        <input type="file" name="foto-participante" id="foto-participante" accept="image/*" required class=" form-control">
         <br><br>
 
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
     <?php

@@ -2,6 +2,10 @@
 include '../includes/connection.php';
 include '../includes/header.php';
 
+// Para capturar a tabela e exibir com Foreach ~~ Henrique
+$stmt = $pdo->query('SELECT * FROM infogaleria');
+$galeria = $stmt->fetchAll();
+
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($pagina < 1) $pagina = 1;
 
@@ -52,9 +56,9 @@ try {
     <div class="mb-3">
         <h1 class="text-center creepster-title">Galeria de fotos</h1>
 
-        <form method="get" class="text-center mb-4">
+        <form method="get" class="text-center mb-4 afacad-regular">
             <input type="text" name="nome" placeholder="Buscar por nome" value="<?php echo htmlspecialchars($buscaNome); ?>">
-            <button type="submit">Buscar</button>
+            <button type="submit" class="button-form">Buscar</button>
         </form>
 
         <div class="mcontainer">

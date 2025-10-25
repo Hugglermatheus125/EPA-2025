@@ -11,17 +11,21 @@
 
 h1{
     color: var(--white);
+    font-size: 3.5rem;
 }
 input{
-    width: 90%;
+    width: 300px;
     border-radius: 10px;
-    border: none;
-    height: 30px;
+    height: 35px;
     padding: 10px;
-    box-shadow: 0px 0px 10px var(--black);
+    margin-right: 6px;
+    border: none;
+    outline: none;
+    transition: box-shadow ease 0.3s;
 }
-input:active{
-    border: var(--black);
+
+input:focus{
+    box-shadow: 0px 0px 15px var(--black);
 }
 
 .btn-form{
@@ -30,7 +34,7 @@ input:active{
     color: var(--white);
     border-radius: 10px;
     padding: 8px;
-    transition: ease 0.4s;
+    transition: ease 0.3s;
     box-shadow: 0px 0px 5px var(--black);
 }
 .btn-form:hover{
