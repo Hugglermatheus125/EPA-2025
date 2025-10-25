@@ -2,13 +2,8 @@
 include '../includes/connection.php';
 include '../includes/header.php';
 
-
-
-
-
-
-//Paginação
-$limite = 8; // máximo por página
+// Paginação
+$limite = 8; 
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($pagina < 1) $pagina = 1;
 $inicio = ($pagina - 1) * $limite;
@@ -17,41 +12,39 @@ $inicio = ($pagina - 1) * $limite;
 $total = $pdo->query("SELECT COUNT(*) FROM inforanking")->fetchColumn();
 $total_paginas = ceil($total / $limite);
 
-
 $posicao_atual = 0;
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="../styles/ranking.css">
-    </head>
-    <body>
-        <div class="container-fluid flex-grow-1 " >
-    <div class="father d-flex flex-column align-items-center ">
-        
-        <h1 class="text-center creepster-title" style="color: var(--white);">Ranking Geral</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking Geral</title>
+    <link rel="stylesheet" href="../styles/ranking.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <div class="container-fluid flex-grow-1">
+        <div class="father d-flex flex-column align-items-center">
 
-        <form action="ranking.php" method="post" class="afacad-regular">
-            <input type="number" name="uId" id="uId" required autocomplete="off" placeholder="Insira seu ID" class="input-search"/>
-            <button type="submit" class="btn-form mt-3">Pesquisar</button>
-        </form>
-        <?php
+            <h1 class="text-center creepster-title mt-3 mb-4">Ranking Geral</h1>
+
+            <form action="ranking.php" method="post" class="afacad-regular d-flex flex-column flex-sm-row align-items-center mb-4">
+                <input type="number" name="uId" id="uId" required autocomplete="off" placeholder="Insira seu ID" class="input-search me-sm-2 mb-2 mb-sm-0"/>
+                <button type="submit" class="btn-form btn">Pesquisar</button>
+            </form>
+
+            <?php
             if (isset($_POST['uId']) && !empty($_POST['uId'])) {
-                // Captura o ID pesquisado
                 $rankingBusca = $_POST['uId'];
-            
-                // Puxa o ranking completo ordenado
                 $stmtRankgeral = $pdo->query('SELECT * FROM infoparticipante INNER JOIN inforanking ON infoparticipante.pId = inforanking.rIdParticipante ORDER BY rPontuacaoFinal DESC, TIMESTAMPDIFF(SECOND, rTempoInicial, rTempoFinal) ASC');
                 $rankingCompleto = $stmtRankgeral->fetchAll();
             
                 $posicaoUsuario = null;
                 $dadosUsuario = null;
                 $contador = 1;
-            
+
                 foreach ($rankingCompleto as $participante) {
                     if ($participante['pId'] == $rankingBusca) {
                         $posicaoUsuario = $contador;
@@ -59,148 +52,80 @@ $posicao_atual = 0;
                         break;
                     }
                     $contador++;
-
                 }
-            
-                if ($dadosUsuario) {
+
+                if ($dadosUsuario):
                     $tempoInicial = new DateTime($dadosUsuario['rTempoInicial']);
                     $tempoFinal = new DateTime($dadosUsuario['rTempoFinal']);
                     $diferenca = $tempoFinal->diff($tempoInicial);
                     $diferencaformatada = $diferenca->format('%d %H-%i-%s');
-                    ?>
-                <br>
-                <div class="dform roboto-regular container-fluid d-flex flex-column leaderboard-container d-flex col-12 col-sm-10 col-md-8 col-lg-6">
-                    <div class="roboto-regular display-ranking d-flex row align-items-center justify-content-between">
-                        <p class="col-6 p1">
-                            <?php
-                            $posicaoUsuario++;
-                            if($posicaoUsuario == 1){
-                                echo '<img src="../assets/primeiro-lugar.png" class=" img-fluid">';
-                                
-                            }
-                            
-                            if($posicaoUsuario == 2){
-                                echo '<img src="../assets/segundo-lugar.png" class=" img-fluid ">';
-                            }
-                            
-                            if($posicaoUsuario == 3){
-                                echo '<img src="../assets/terceiro-lugar.png" class=" img-fluid">';
-                            }
-                            if ($posicaoUsuario >= 4) {
-                                echo $posicaoUsuario;
-                                
-                                
-                            }
-                            ?>
-                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll"> <?php echo $participante['pNome']; ?>
-                        </p>
-                        <p class="col-5 p2">
-                            <?php echo $participante['rPontuacaoFinal']; ?>
-                        </p>
-                    </div>
+            ?>
+            <div class="dform roboto-regular container-fluid d-flex flex-column leaderboard-container col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="roboto-regular display-ranking d-flex flex-wrap align-items-center justify-content-between">
+                    <p class="col-6 p1 d-flex align-items-center">
+                        <?php
+                        $posicaoUsuario++;
+                        if($posicaoUsuario == 1) echo '<img src="../assets/primeiro-lugar.png" class="img-fluid me-2">';
+                        if($posicaoUsuario == 2) echo '<img src="../assets/segundo-lugar.png" class="img-fluid me-2">';
+                        if($posicaoUsuario == 3) echo '<img src="../assets/terceiro-lugar.png" class="img-fluid me-2">';
+                        if ($posicaoUsuario >= 4) echo $posicaoUsuario;
+                        ?>
+                        <img src="../assets/Ellipse-1.png" class="img-fluid img-boll me-2"> <?php echo $participante['pNome']; ?>
+                    </p>
+                    <p class="col-5 p2 text-end"><?php echo $participante['rPontuacaoFinal']; ?></p>
                 </div>
-
-                    <?php
-                            
-                } else {
-                    echo '<p>Nenhum resultado encontrado para o ID informado.</p>';
-                }
+            </div>
+            <?php else: ?>
+                <p class="text-light">Nenhum resultado encontrado para o ID informado.</p>
+            <?php endif; 
             } else {
-                /*
-                    Se não houver um ID buscado
-                    Exibir o ranking normalmente.
-                */
                 $stmtRankgeral = $pdo->query("SELECT * FROM infoparticipante INNER JOIN inforanking ON infoparticipante.pId = inforanking.rIdParticipante ORDER BY rPontuacaoFinal DESC, TIMESTAMPDIFF(SECOND, rTempoInicial, rTempoFinal) ASC LIMIT $limite OFFSET $inicio");
                 $rankingParticipantes = $stmtRankgeral->fetchAll();
                 $posicao = $inicio;
-                ?>
-                <br>
-                <div class="container-fluid d-flex flex-column leaderboard-container">
-                
-                <?php
-                foreach ($rankingParticipantes as $participante) {
+            ?>
+            <div class="container-fluid d-flex flex-column leaderboard-container col-12 col-sm-10 col-md-8 col-lg-6 mb-5">
+                <?php foreach ($rankingParticipantes as $participante):
                     $tempoInicial = new DateTime($participante['rTempoInicial']);
                     $tempoFinal = new DateTime($participante['rTempoFinal']);
                     $diferenca = $tempoFinal->diff($tempoInicial);
                     $diferencaformatada = $diferenca->format('%d %H-%i-%s');
-
-                    ?>
-
-                    <div class="display-ranking d-flex row align-items-center justify-content-between">
-
-                    
-                        <?php
-                        $posicao++;
-                        if($posicao == 1){
-                             
-                            ?>
-                            <p class="col-6 p1 afacad-regular-ranking">
-                                <img src="../assets/primeiro-lugar.png" class=" img-fluid">
-                                <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular-ranking" > <?php echo $participante['pNome']; ?>
-                            </p>    
-                      <?php  }
-                        
-                        if($posicao == 2){
-
-                        ?>
-                        <p class="col-6 p1 afacad-regular-ranking">
-                            <img src="../assets/segundo-lugar.png" class=" img-fluid">
-                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular-ranking" > <?php echo $participante['pNome']; ?>
+                    $posicao++;
+                ?>
+                <div class="display-ranking d-flex flex-wrap align-items-center justify-content-between">
+                    <?php if($posicao <= 3): ?>
+                        <p class="col-6 p1 afacad-regular-ranking d-flex align-items-center">
+                            <img src="../assets/<?= $posicao == 1 ? 'primeiro-lugar.png' : ($posicao == 2 ? 'segundo-lugar.png' : 'terceiro-lugar.png') ?>" class="img-fluid me-2">
+                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular-ranking me-2"> <?= $participante['pNome']; ?>
                         </p>
-                            
-                <?php   } 
-                        if($posicao == 3){ 
-
-                        ?>
-                        <p class="col-6 p1 afacad-regular-ranking">
-                            <img src="../assets/terceiro-lugar.png" class=" img-fluid">
-                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular" > <?php echo $participante['pNome']; ?>
+                    <?php else: ?>
+                        <p class="col-6 p3 afacad-regular-ranking d-flex align-items-center">
+                            <?= $posicao ?>
+                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll-2 afacad-regular me-2"> <?= $participante['pNome']; ?>
                         </p>
-                            
-                <?php   } 
-                     
-                    
-                    
-                        if ($posicao >= 4) {
-                            ?>
-
-                                <p class="p3 col-6 afacad-regular-ranking">
-                                    <?php echo $posicao; ?>
-                                    <img src="../assets/Ellipse-1.png" class="img-fluid img-boll-2 afacad-regular" > <?php echo $participante['pNome']; ?>
-                                </p>
-                     <?php }; ?>
-                            
-                    <p class="col-5 p2 afacad-regular-ranking">
-                         <?php echo $participante['rPontuacaoFinal']; ?>
-                    </p>
-                    </div>
-                        
-                <?php } ?> 
-                <div class="page">
-                    <div class="paginas">
-                    <?php for ($i = 1; $i <= min(3, $total_paginas); $i++): ?>
-                        <a href="?page=<?= $i ?>">
-                            <div class="page-btn afacad-regular <?= ($i == $pagina) ? 'active' : '' ?>"><?= $i ?></div>
-                        </a>
-                    <?php endfor; ?>
-
-                    <?php if ($pagina < $total_paginas): ?>
-                        <a href="?page=<?= $pagina + 1 ?>">
-                            <div class="page-btn arrow">&gt;</div>
-                        </a>
                     <?php endif; ?>
+                    <p class="col-5 p2 text-end afacad-regular-ranking"><?= $participante['rPontuacaoFinal']; ?></p>
                 </div>
-        <?php }; ?>
+                <?php endforeach; ?>
+
+                <div class="page mt-3">
+                    <div class="paginas">
+                        <?php for ($i = 1; $i <= min(3, $total_paginas); $i++): ?>
+                            <a href="?page=<?= $i ?>">
+                                <div class="page-btn afacad-regular <?= ($i == $pagina) ? 'active' : '' ?>"><?= $i ?></div>
+                            </a>
+                        <?php endfor; ?>
+                        <?php if ($pagina < $total_paginas): ?>
+                            <a href="?page=<?= $pagina + 1 ?>">
+                                <div class="page-btn arrow">&gt;</div>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+            <?php }; ?>
         </div>
-    </div>
     </div>
 </body>
 </html>
 
-
-<?php  
-include '../includes/footer.php';
-
-?>
-
-<!-- Exibindo informações da tabela criada a partir do INNER JOIN -->
+<?php include '../includes/footer.php'; ?>

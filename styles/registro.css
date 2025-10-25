@@ -1,4 +1,10 @@
-.container {
+:root {
+    --primary-color: #8E1800;
+    --black: 21, 1, 0; /* para rgba() */
+    --white: #F0F0F0;
+}
+
+.container, .mcontainer {
     width: 100%;
 }
 
@@ -7,61 +13,67 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-
+    animation: fadeIn 1s ease-in;
 }
 
 .form-registro{
-    background-color: rgba(var(--black), 0.72) !important;
+    background-color: rgba(var(--black), 0.72);
     backdrop-filter: blur(2px);
     display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-    
-
     padding: 60px 20px;
     border-radius: 12px;
-    width: 60%;
-    height: 80%;
-    
+    width: 100%;
+    max-width: 600px;
 }
 
 .afacad-regular {
-    width: 80%;
+    width: 100%;
 }
 
 .inpu {
-    display: inline;
-    margin-left: 14%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Input */
 .form-control{
-    width: 75%;
+    width: 100%;
+    max-width: 400px;
     height: 40px;
     border-radius: 12px;
     display: block;
-    margin: 10px auto; 
+    margin: 10px 0; 
 }
 
 .form-control:active{
     border: none;
 }
 
+/* Label com fonte e cor branca */
 .label-control {
     font-size: 22px;
-    justify-content: center;
+    text-align: center;
+    font-family: "Afacad", sans-serif;
+    color: var(--white) !important;
 }
 
+/* Botão centralizado abaixo do input */
 .btn {
     display: flex; 
     justify-content: center;
     align-items: center;
-    background-color: rgba(var(--primary-color), 1);
+    background-color: var(--primary-color) !important;
     border-radius: 12px;
-    width: 35%;
-    height: 40px;
-    margin: 10px auto;
+    width: auto; /* largura do conteúdo */
+    padding: 10px 25px;
+    margin: 20px auto 0 auto; /* centraliza horizontal e separa do input */
+    color: var(--white) !important;
 }
 
 .btn p {
@@ -70,24 +82,42 @@
 }
 
 .btn:hover{
-    background-color: rgba(var(--primary-color), 1);
+    background-color: var(--primary-color) !important;
     transform: scale(1.1);
     transition: 0.3s;
 }
+
+/* Título branco forçado */
 .creepster-title{
     text-align: center;
     margin-bottom: 10%;
-    font-size:60px
+    font-size: 3.5rem;
+    color: var(--white) !important;
+    font-family: "Afacad", sans-serif;
 }
 
 /* Animação sutil de aparição */
-.mcontainer {
-    animation: fadeIn 1s ease-in;
-}
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Ajustes responsivos */
+@media (max-width: 768px){
+    .creepster-title {
+        font-size: 2.5rem;
+    }
 
+    .form-registro {
+        padding: 40px 15px;
+    }
+
+    .form-control {
+        max-width: 100%;
+    }
+
+    .btn {
+        width: 70%;
+        padding: 10px 20px;
+    }
+}
