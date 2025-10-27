@@ -32,7 +32,7 @@ $posicao_atual = 0;
 
             <form action="ranking.php" method="post" class="afacad-regular d-flex flex-column flex-sm-row align-items-center mb-4">
                 <input type="number" name="uId" id="uId" required autocomplete="off" placeholder="Insira seu ID" class="input-search me-sm-2 mb-2 mb-sm-0"/>
-                <button type="submit" class="btn-form btn">Pesquisar</button>
+                <button type="submit" class="btn-form ">Pesquisar</button>
             </form>
 
             <?php
@@ -62,14 +62,13 @@ $posicao_atual = 0;
             ?>
             <div class="dform roboto-regular container-fluid d-flex flex-column leaderboard-container col-12 col-sm-10 col-md-8 col-lg-6">
                 <div class="roboto-regular display-ranking d-flex flex-wrap align-items-center justify-content-between">
-                    <p class="col-6 p1 d-flex align-items-center">
+                    <p class="col-6 p4 d-flex align-items-center">
                         <?php
                         $posicaoUsuario++;
                         if($posicaoUsuario == 1) echo '<img src="../assets/primeiro-lugar.png" class="img-fluid me-2">';
                         if($posicaoUsuario == 2) echo '<img src="../assets/segundo-lugar.png" class="img-fluid me-2">';
                         if($posicaoUsuario == 3) echo '<img src="../assets/terceiro-lugar.png" class="img-fluid me-2">';
-                        if ($posicaoUsuario >= 4) echo $posicaoUsuario;
-                        ?>
+                        if ($posicaoUsuario >= 4) echo $posicaoUsuario ?> 
                         <img src="../assets/Ellipse-1.png" class="img-fluid img-boll me-2"> <?php echo $participante['pNome']; ?>
                     </p>
                     <p class="col-5 p2 text-end"><?php echo $participante['rPontuacaoFinal']; ?></p>
@@ -95,7 +94,7 @@ $posicao_atual = 0;
                     <?php if($posicao <= 3): ?>
                         <p class="col-6 p1 afacad-regular-ranking d-flex align-items-center">
                             <img src="../assets/<?= $posicao == 1 ? 'primeiro-lugar.png' : ($posicao == 2 ? 'segundo-lugar.png' : 'terceiro-lugar.png') ?>" class="img-fluid me-2">
-                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll afacad-regular-ranking me-2"> <?= $participante['pNome']; ?>
+                            <img src="../assets/Ellipse-1.png" class="img-fluid img-boll1 afacad-regular-ranking me-2"> <?= $participante['pNome']; ?>
                         </p>
                     <?php else: ?>
                         <p class="col-6 p3 afacad-regular-ranking d-flex align-items-center">

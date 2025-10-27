@@ -4,7 +4,11 @@ body {
     flex-direction: column;
     margin: 0;
 }
-
+:root {
+    --primary-color: #8E1800;
+    --black: #150100;
+    --white: #F0F0F0;
+}
 .father {
     display: flex;
     justify-content: center;
@@ -30,7 +34,7 @@ body {
     transform: translateY(50%);
     font-size: 20px;
     font-weight: bold;
-    color: #fce6bd;
+    color:var(--black);
 }
 
 footer {

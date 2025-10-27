@@ -33,7 +33,7 @@ include '../includes/header.php';
         }
         idSalvo = localStorage.getItem("idUsuario");
             if (idSalvo) {
-                output.innerHTML = `<p class="roboto-regular"> Seu ID é: ${idSalvo} </p>`
+                output.innerHTML = `<p class="afacad-regular"> ID: ${idSalvo}</p>`
             }
             else {
                 output.innerHTML = `<p> Você não possui um Ticket. <a href="registro.php">Cadastre-se</a>`
