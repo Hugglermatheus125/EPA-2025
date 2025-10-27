@@ -84,6 +84,15 @@
     "wdth" 100;
     color: rgba(var(--white), 1);
   }
+.afacad-regular-ticket {
+      font-family: "Afacad", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: normal;
+      font-style: normal;
+      font-variation-settings:
+          "wdth" 100;
+       
+  }
 
   body{
     margin: 0;

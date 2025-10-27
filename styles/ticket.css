@@ -4,11 +4,6 @@ body {
     flex-direction: column;
     margin: 0;
 }
-:root {
-    --primary-color: #8E1800;
-    --black: #150100;
-    --white: #F0F0F0;
-}
 .father {
     display: flex;
     justify-content: center;
@@ -28,14 +23,14 @@ body {
 }
 
 .id-area {
-    position: absolute;
+   position: absolute;
     bottom: 18%;
     left: 13%;
     transform: translateY(50%);
     font-size: 20px;
-    font-weight: bold;
-    color:var(--black);
+    color: #fce6bd;
 }
+
 
 footer {
     margin-top: auto !important;

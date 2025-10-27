@@ -20,6 +20,7 @@ include '../includes/header.php';
     </div>
 </div>
 
+
 <script>
         // Explicação de "URLSearchParams(window.location.search).get("id").
         // Numa URL é comum ver o seguinte: "link?VARIAVEL=VALOR".
@@ -33,10 +34,10 @@ include '../includes/header.php';
         }
         idSalvo = localStorage.getItem("idUsuario");
             if (idSalvo) {
-                output.innerHTML = `<p class="afacad-regular"> ID: ${idSalvo}</p>`
+                output.innerHTML = `<p class="afacad-regular-ticket" style="color: wheat;"> ID: ${idSalvo} </p>`;
             }
             else {
-                output.innerHTML = `<p> Você não possui um Ticket. <a href="registro.php">Cadastre-se</a>`
+                output.innerHTML = `<p> Você não possui um Ticket. <a href="registro.php">Cadastre-se</a> </p>`;
             }
 
     </script>
