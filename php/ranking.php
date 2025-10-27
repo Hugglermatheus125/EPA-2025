@@ -38,7 +38,7 @@ $posicao_atual = 0;
             <?php
             if (isset($_POST['uId']) && !empty($_POST['uId'])) {
                 $rankingBusca = $_POST['uId'];
-                $stmtRankgeral = $pdo->query('SELECT * FROM infoparticipante INNER JOIN inforanking ON infoparticipante.pId = inforanking.rIdParticipante ORDER BY rPontuacaoFinal DESC, TIMESTAMPDIFF(SECOND, rTempoInicial, rTempoFinal) ASC');
+                $stmtRankgeral = $pdo->query('SELECT * FROM infoparticipante INNER JOIN inforanking ON infoparticipante.pId = inforanking.rIdParticipante ORDER BY rPontuacaoFinal DESC, TIMESTAMPDIFF(SECOND, rTempoFinal, rTempoInicial) ASC');
                 $rankingCompleto = $stmtRankgeral->fetchAll();
             
                 $posicaoUsuario = null;
@@ -78,7 +78,7 @@ $posicao_atual = 0;
                 <p class="text-light">Nenhum resultado encontrado para o ID informado.</p>
             <?php endif; 
             } else {
-                $stmtRankgeral = $pdo->query("SELECT * FROM infoparticipante INNER JOIN inforanking ON infoparticipante.pId = inforanking.rIdParticipante ORDER BY rPontuacaoFinal DESC, TIMESTAMPDIFF(SECOND, rTempoInicial, rTempoFinal) ASC LIMIT $limite OFFSET $inicio");
+                $stmtRankgeral = $pdo->query("SELECT * FROM infoparticipante INNER JOIN inforanking ON infoparticipante.pId = inforanking.rIdParticipante ORDER BY rPontuacaoFinal DESC, TIMESTAMPDIFF(SECOND, rTempoFinal, rTempoInicial) ASC LIMIT $limite OFFSET $inicio");
                 $rankingParticipantes = $stmtRankgeral->fetchAll();
                 $posicao = $inicio;
             ?>
